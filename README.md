@@ -2,7 +2,13 @@
 Analyzing the risk of loans with several machine learning models
 
 ## Overview of the analysis
-Explain the purpose of this analysis.
+In this analysis we used Python to create and implement supervised Machine Learning techniques that analzed a dataset in order to predict credit risk for potential clients. This analysis was performed on a dataset comprised of individuals who had aquired loans and was made up of demographic information, loan status, finacial history, etc.  
+
+Since there is inherently a mauch lower number of defaulted loans in our data set compared to non-defaulted loans, the groups were hugely imbalanced. In order to address this discrepancy in our analysis, we used various models to balance the groups and then compared their accuracy in predicitign risk. We employed and compared the following supervised Machine Learning Models:  
+ - Oversampling with the <b> RandomOverSampling</b> and <b> SMOTE</b> alogorithms. 
+ - Undersampling with the <b> ClusterCentroids</b> algorithms. 
+ - Combination approach with both oversampling and undersampling usuing the <b> SMOTEENN</b> alogorithm. 
+ - We then used two additional models that reduce bias in prediction. The first was <b> BalancedRandomForestClassifier</b> and the second was <b> EasyEnsembleClassifier</b>. 
 
 ## Results (Balanced Accuracy Scores, Confusion Matrices, and Imbalanced Classification Reports) 
 
@@ -31,7 +37,7 @@ The balanced accuracy score reduced to 54%.
 The high_risk precision is still 1% with 69% sensitivity. This makes a F1 of only 1%.
 Due to the high number of false positive results, the sensitivity for low_risk is 40%, though the precision is high.
 
-### SMOTEEN Combination Sampling Model
+### SMOTEENN Combination Sampling Model
 
 ![SMOTEEN_cm_bas.png](Resources/SMOTEEN_cm_bas.png)
 ![SMOTEEN_cr.png](Resources/SMOTEEN_cr.png)
