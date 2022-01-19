@@ -2,12 +2,12 @@
 Analyzing the risk of loans with several machine learning models
 
 ## Overview of the analysis
-In this analysis we used Python to create and implement supervised Machine Learning techniques that analzed a dataset in order to predict credit risk for potential clients. This analysis was performed on a dataset comprised of individuals who had aquired loans and was made up of demographic information, loan status, finacial history, etc.  
+In this analysis we used Python to create and implement supervised Machine Learning techniques that analyzed a dataset in order to predict credit risk for potential clients. This analysis was performed on a dataset comprised of individuals who had acquired loans and was made up of demographic information, loan status, financial history, etc.  
 
-Since there is inherently a mauch lower number of defaulted loans in our data set compared to non-defaulted loans, the groups were hugely imbalanced. In order to address this discrepancy in our analysis, we used various models to balance the groups and then compared their accuracy in predicitign risk. We employed and compared the following supervised Machine Learning Models:  
- - Oversampling with the <b> RandomOverSampling</b> and <b> SMOTE</b> alogorithms. 
+Since there is inherently a much lower number of defaulted loans in our data set compared to non-defaulted loans, the groups were hugely imbalanced. In order to address this discrepancy in our analysis, we used various models to balance the groups and then compared their accuracy in predicting risk. We employed and compared the following supervised Machine Learning Models:  
+ - Oversampling with the <b> RandomOverSampling</b> and <b> SMOTE</b> algorithms. 
  - Undersampling with the <b> ClusterCentroids</b> algorithms. 
- - Combination approach with both oversampling and undersampling usuing the <b> SMOTEENN</b> alogorithm. 
+ - Combination approach with both oversampling and under-sampling using the <b> SMOTEENN</b> algorithm. 
  - We then used two additional models that reduce bias in prediction. The first was <b> BalancedRandomForestClassifier</b> and the second was <b> EasyEnsembleClassifier</b>. 
 
 ## Results (Balanced Accuracy Scores, Confusion Matrices, and Imbalanced Classification Reports) 
@@ -42,8 +42,8 @@ Due to the high number of false positive results, the sensitivity for low_risk i
 ![SMOTEEN_cm_bas.png](Resources/SMOTEEN_cm_bas.png)
 ![SMOTEEN_cr.png](Resources/SMOTEEN_cr.png)
 The balanced accuracy score was 65%, similar to the oversampling models. 
-The high_risk precision is 1% with 72% sensitivity which makes a F1 of 2%, simialar to the oversampling models.
-The number of the false posisitve in the low_risk population is lower so the sensitivity increased to 57% from the undersampling model.
+The high_risk precision is 1% with 72% sensitivity which makes a F1 of 2%, similar to the oversampling models.
+The number of the false positive in the low_risk population is lower so the sensitivity increased to 57% from the undersampling model.
 
 ### Blanced Random Forest Classifier Model
 
@@ -54,8 +54,7 @@ The balanced accuracy score was now higher at 79%.
 The high_risk precision remains low at 3% with a 70% sensitivity. This makes a slightly higher F1 of 6%.
 Due to a smaller number of false positives, the low_risk precision is 100% with a sensitivity of 87%. This is an improvement over the previous models. 
 
-### Easy Ensemble Calssifier Model 
-
+### Easy Ensemble Classifier Model 
 
 ![EasyEClassifier_bas.png](Resources/EasyEClassifier_bas.png)
 ![EasyEClassifier_cm.png](Resources/EasyEClassifier_cm.png)
@@ -65,4 +64,4 @@ The high_risk precision remains low at 9% with a 92% sensitivity. This results i
 There are fewer false positives, the low_risk precision is 100% with a sensitivity of 94%. This is a huge improvement over the previous models. 
 
 ## Summary
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. If you do not recommend any of the models, justify your reasoning.
+In our analysis, we found that all the models had low precision when it came to the high credit risk group. The highest precision rating for this group was 9% with the Ensemble method. This is still a very low precision rating, though the recall or sensitivity was high at 92%. This means that while nearly all of the high-risk credit individuals were identified, there are a lot of low risk credit individuals who were incorrectly categorized. This would mean that these incorrectly categorized individuals would not be given loans and the back would miss out on the opportunity for additional clients, and therefore additional revenue. Based on our analysis, I would say that additional modeling algorithms should be performed and evaluated to try to identify more accurate models. In the absence of additional modeling, I would use the Easy Ensemble Classifier model, and keep in mind the noted limitations it contains.
